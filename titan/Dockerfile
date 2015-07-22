@@ -1,7 +1,10 @@
 FROM java:8
 
-RUN curl -O http://s3.thinkaurelius.com/downloads/titan/titan-0.5.4-hadoop2.zip
-RUN unzip titan-0.5.4-hadoop2.zip
+ENV VERSION 0.9.0-M2-hadoop1
 
-WORKDIR titan-0.5.4-hadoop2
+RUN curl -O http://s3.thinkaurelius.com/downloads/titan/titan-$VERSION.zip && \
+    unzip titan-$VERSION.zip && \
+    rm -fr titan-$VERSION.zip
+
+WORKDIR titan-$VERSION
 CMD ./bin/gremlin.sh
