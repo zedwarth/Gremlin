@@ -10,4 +10,4 @@ WORKDIR titan-$VERSION
 
 COPY gremlin-server.yaml conf/gremlin-server/
 
-CMD ./bin/gremlin.sh
+CMD ./bin/gremlin-server.sh

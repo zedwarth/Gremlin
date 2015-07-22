@@ -1,0 +1,11 @@
+cassandra:
+  image: cassandra
+
+elasticsearch:
+  image: elasticsearch
+
+titan:
+  build: .
+  links:
+    - cassandra
+    - elasticsearch
