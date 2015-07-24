@@ -9,5 +9,6 @@ RUN curl -O http://s3.thinkaurelius.com/downloads/titan/titan-$VERSION.zip && \
 WORKDIR titan-$VERSION
 
 COPY gremlin-server.yaml conf/gremlin-server/
+COPY titan-cassandra-es.properties  conf/
 
 CMD ./bin/gremlin-server.sh
